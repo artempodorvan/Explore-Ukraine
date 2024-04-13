@@ -1,0 +1,90 @@
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+        }
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .sidebar h2 {
+            margin-top: 0;
+            color: #E5E7E9;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 60px;
+        }
+        .sidebar li {
+            margin-bottom: 50px;
+        }
+        .sidebar a {
+            color: #E5E7E9;
+            text-decoration: none;
+            display: block;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            margin-left: 220px;
+        }
+        .content h1 {
+            margin-top: 0;
+        }
+
+        #meals {
+            background-color: #f9f9f9;
+            padding: 50px;
+            margin-left: 200px;
+        }
+        #meals h2 {
+            color: #3498DB;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+            font-family: monospace;
+        }
+        .meal {
+            display: grid; /* Use grid layout */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+            grid-gap: 30px; /* Spacing between meal containers */
+        }
+        .meal-container {
+            border: 1px solid #ccc; /* Border around each meal container */
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Spacing inside the meal container */
+            border: none;
+            transition: transform 0.3s ease;
+        }
+        .meal-container img {
+            max-width: 100%; /* Make the image responsive */
+            height: auto;
+            display: block;
+            margin: 0 auto 20px; /* Center the image vertically and add spacing */
+            border-radius: 10px; /* Rounded corners for the image */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+        }
+        .meal-container h3 {
+            font-size: 1.5em; /* Heading size */
+            margin-top: 0; /* Remove default margin */
+            text-align: center; /* Center align the heading */
+            font-family: Serif;
+        }
+        .meal-container p {
+            font-size: 1.1em; /* Paragraph size */
+            line-height: 1.6; /* Line height */
+            margin-top: 0; /* Remove default margin */
+            text-align: justify; /* Justify text */
+        }
+
+        .meal-container:hover img {
+            opacity: 1.5;
+            transform: scale(1.1);
+        }

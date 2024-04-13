@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Region Info</title>
+    <link rel="stylesheet" href="static/css/region.css">
+    <link rel="icon" type="image/x-icon" href="static/img/ukraine.png">
+</head>
+<body>
+
+<div class="container">
+    <div class="region-info">
+        <div class="image-container">
+            <img src="{{ img_src[0] }}" id="region-image" alt="Region Image">
+        </div>
+
+        <div class="buttons">
+            <button id="prev-btn" onclick="prevImage()"><</button>
+            <button id="next-btn" onclick="nextImage()">></button>
+        </div>
+
+        <div class="info">
+            <h2 id="region-name">{{ region_name }}</h2>
+            <p id="region-description">{{ region_info }}</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const images = {{ img_src|tojson|safe }};
+    let currentIndex = 0;
+
+    const regionImage = document.getElementById('region-image');
+    const regionName = document.getElementById('region-name');
+    const regionDescription = document.getElementById('region-description');
+
+    function displayImage(index) {
+        regionImage.src = images[index];
+    }
+
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        displayImage(currentIndex);
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        displayImage(currentIndex);
+    }
+
+    setInterval (function(){
+        if (currentIndex === images.length){
+            currentIndex = 0;
+        }
+
+        currentIndex = (currentIndex + 1) % images.length;
+        displayImage(currentIndex);
+
+    }, 5000);
+
+    displayImage(currentIndex);
+</script>
+</body>
+</html>

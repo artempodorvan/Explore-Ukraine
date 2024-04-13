@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/meals.css">
+    <link rel="icon" type="image/x-icon" href="static/img/ukraine.png">
+    <title>Explore Ukraine</title>
+    <style>
+        .sidebar {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .content {
+            margin-left: 220px; /* Adjust according to sidebar width */
+            padding: 20px;
+        }
+        section {
+            margin-top: 50px; /* Add some space between sections and sidebar */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Explore Ukraine</h2>
+            <ul>
+                <li><a href="/">Main</a></li>
+                <li><a href="/meals">Meals</a></li>
+                <li><a href="/map">Map</a></li>
+            </ul>
+        </div>
+
+        <div id="meals">
+            <h2>Ukrainian Meals</h2>
+            <div class="meal">
+                <div class="meal-container">
+                    <img src="static/img/borsh.jpg" alt="Ukrainian Meal 1">
+                    <h3>Borscht</h3>
+                    <p>Borscht is a traditional Ukrainian soup made with beets, cabbage, potatoes, and other vegetables.
+                        It's often served with sour cream and fresh dill.</p>
+                </div>
+
+                <div class="meal-container">
+                    <img src="static/img/varenyki.jpg" alt="Ukrainian Meal 2">
+                    <h3>Varenyky</h3>
+                    <p>Varenyky are dumplings filled with various ingredients, such as potatoes, cheese, meat, or
+                        fruits. They're boiled and typically served with sour cream.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
